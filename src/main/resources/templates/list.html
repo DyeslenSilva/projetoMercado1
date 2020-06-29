@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+ 
+ <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    
+	
+<meta charset="ISO-8859-1">
+<title>Lista de Clientes</title>
+</head>
+	<body>
+	
+	<div class="titleList">
+		<p>Lista de Clientes</p>
+	</div>	
+	
+		<table class="tableQuery">
+		<thead>
+			<tr>	
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Senha</th>
+				<th>Cidade</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cliente : ${clientes}">
+				<td> <span th:text="${cliente.idCliente}"></span></td>
+				<td> <span th:text="${cliente.loginCliente}"></span></td>	
+				<td> <span th:text="${cliente.senhaCliente}"></span></td>
+				<td> <span th:text="${cliente.cidade}"></span></td>
+			</tr>
+		</tbody>	
+		</table>
+	</body>
+</html>
